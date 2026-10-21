@@ -38,7 +38,7 @@ ctx.fillRect(10, 10, 100, 100);
     ctx.lineTo(100, 25);
     ctx.fill();
   } */
-
+/*
   const canvas = document.getElementById("canvas");
   if (canvas.getContext) {
     const ctx = canvas.getContext("2d");
@@ -51,6 +51,26 @@ ctx.fillRect(10, 10, 100, 100);
     ctx.arc(60, 65, 5, 0, Math.PI * 2, true); // Ojo izquierdo
     ctx.moveTo(95, 65);
     ctx.arc(90, 65, 5, 0, Math.PI * 2, true); // Ojo derecho
+    ctx.stroke();
+  } */
+
+   const canvas = document.getElementById("canvas");
+  if (canvas.getContext) {
+    const ctx = canvas.getContext("2d");
+
+    // Triángulo relleno
+    ctx.beginPath();
+    ctx.moveTo(25, 25);
+    ctx.lineTo(105, 25);
+    ctx.lineTo(25, 105);
+    ctx.fill();
+
+    // Triángulo contorneado
+    ctx.beginPath();
+    ctx.moveTo(125, 125);
+    ctx.lineTo(125, 45);
+    ctx.lineTo(45, 125);
+    ctx.closePath();
     ctx.stroke();
   }
   }
