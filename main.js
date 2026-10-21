@@ -53,7 +53,7 @@ ctx.fillRect(10, 10, 100, 100);
     ctx.arc(90, 65, 5, 0, Math.PI * 2, true); // Ojo derecho
     ctx.stroke();
   } */
-
+  /*
    const canvas = document.getElementById("canvas");
   if (canvas.getContext) {
     const ctx = canvas.getContext("2d");
@@ -72,5 +72,30 @@ ctx.fillRect(10, 10, 100, 100);
     ctx.lineTo(45, 125);
     ctx.closePath();
     ctx.stroke();
+  }*/
+
+  const canvas = document.getElementById("canvas");
+  if (canvas.getContext) {
+    const ctx = canvas.getContext("2d");
+
+    for (let i = 0; i < 4; i++) {
+      for (let j = 0; j < 3; j++) {
+        ctx.beginPath();
+        const x = 25 + j * 50; // Coordenada x
+        const y = 25 + i * 50; // Coordenada y
+        const radius = 20; // Radio del Arco
+        const startAngle = 0; // Punto inicial del Círculo
+        const endAngle = Math.PI + (Math.PI * j) / 2; // Punto final del Círculo
+        const counterclockwise = i % 2 !== 0; // En el sentido de las agujas del reloj o en sentido contrario
+
+        ctx.arc(x, y, radius, startAngle, endAngle, counterclockwise);
+
+        if (i > 1) {
+          ctx.fill();
+        } else {
+          ctx.stroke();
+        }
+      }
+    }
   }
   }
